@@ -1,5 +1,12 @@
 function getRandomInt(min,max)
 {	
+	if (max > min)
+	{
+		let aa;
+		aa=max;
+		max=min;
+		min=aa;
+	}
 	return (Math.floor(Math.random()*(parseFloat(max)-parseFloat(min)))+parseFloat(min));
 }
 
@@ -39,6 +46,10 @@ function out()
 {
 	var mashelp=[];
 	var helps=parseFloat(document.getElementById('N').value);
+	if (helps<0)
+	{
+		helps=helps*(-1);
+	}
 	k=getArray(helps);
 	k=getResultArray(k);
 	var index=0;
